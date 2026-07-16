@@ -1,0 +1,24 @@
+# Local secrets and environment overrides
+.local.env
+.env
+.env.*
+!.env.example
+
+# Operating-system and local tool state
+.DS_Store
+**/.DS_Store
+/.playwright-cli/
+
+# Generated deliverables
+/output/
+/content-planner-output/
+/articles/
+/audits/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Common private-key files
+*.pem
+*.key

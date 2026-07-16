@@ -1,0 +1,4 @@
+interface:
+  display_name: "SEO Title & Description"
+  short_description: "Research, audit, and write SEO metadata"
+  default_prompt: "Use $seo-title-and-description to research a keyword and create five SEO title and meta description pairs."

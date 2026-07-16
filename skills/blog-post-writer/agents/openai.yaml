@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blog Post Writer"
+  short_description: "Research and write publish-ready SEO/GEO blog posts"
+  default_prompt: "Use $blog-post-writer to research and write a publish-ready article for my target keyword."

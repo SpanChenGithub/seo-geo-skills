@@ -1,0 +1,4 @@
+interface:
+  display_name: "Technical SEO Audit"
+  short_description: "Audit up to 10 URLs with a safe Apify fallback"
+  default_prompt: "Use $tech-seo-audit to audit this URL or URL list, use Apify only when direct evidence is incomplete and its cost is explicitly authorized, and save the required reports."

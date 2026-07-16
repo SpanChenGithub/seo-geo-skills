@@ -1,0 +1,4 @@
+interface:
+  display_name: "Query Fan-Out Analysis"
+  short_description: "Analyze query fan-outs with provider APIs first"
+  default_prompt: "Use $query-fan-out-analysis to call available provider APIs first, map likely AI search queries, and recommend SEO/GEO topics."
