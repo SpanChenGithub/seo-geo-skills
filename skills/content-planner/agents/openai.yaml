@@ -1,0 +1,11 @@
+interface:
+  display_name: "Content Planner"
+  short_description: "Plan complete SEO and GEO content strategies"
+  default_prompt: "Use $content-planner to build a country-specific website content plan from Ahrefs MCP data."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "ahrefs"
+      description: "Read-only Ahrefs keyword, competitor, ranking, and SERP data"
+      transport: "streamable_http"
+      url: "https://api.ahrefs.com/mcp/mcp"
