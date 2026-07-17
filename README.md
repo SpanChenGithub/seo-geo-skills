@@ -17,6 +17,7 @@ Reusable, evidence-first Agent Skills for SEO and GEO work in Codex, Claude Code
 | [`query-fan-out-analysis`](skills/query-fan-out-analysis/) | Multi-provider fan-out and page-topic analysis / 多模型 Query Fan-out 与页面话题分析 | Provenance-labeled Markdown report / 带来源类型标记的 Markdown 报告 | APIs optional; simulation available / API 可选，可降级模拟 |
 | [`seo-title-and-description`](skills/seo-title-and-description/) | SEO metadata generation, audit, and rewrite / SEO Title 与 Description 生成、审核、改写 | Five ranked metadata pairs / 5 组排序后的 Metadata | Current SERP evidence required / 必须有当前 SERP 证据 |
 | [`tech-seo-audit`](skills/tech-seo-audit/) | Evidence-backed technical SEO audits / 基于真实证据的技术 SEO 审核 | Prioritized Markdown audit report / 按优先级排列的审核报告 | Accessible URL or supplied evidence / 可访问 URL 或用户证据 |
+| [`tools-landing-page-generator`](skills/tools-landing-page-generator/) | Researched landing pages for online tools / 在线工具落地页调研与生成 | Validated static HTML package / 经验证的静态 HTML 内容包 | Keyword, official site, and current web evidence / 关键词、官网与当前网络证据 |
 
 ## Installation / 安装
 
@@ -289,6 +290,43 @@ For one URL, the complete five-section Markdown report is returned in the conver
 The Skill prefers a real browser with DevTools-equivalent evidence, then browser automation, then limited static HTTP inspection. GSC and Ahrefs are optional read-only evidence sources. Apify is used only as a controlled fallback or when explicitly requested; every possibly chargeable Apify run requires explicit authorization and a positive cost cap. Its token is read only from `APIFY_API_TOKEN` or a secure host connection.
 
 Skill 优先使用具有 DevTools 等效证据的真实浏览器，其次是浏览器自动化，再其次是受限的静态 HTTP 检查。GSC 与 Ahrefs 仅作为可选只读证据源。Apify 只作为受控降级方案或在用户明确要求时使用；每次可能收费的 Apify Run 都必须获得明确授权，并设置正数费用上限。Token 仅从 `APIFY_API_TOKEN` 或安全的宿主连接中读取。
+
+### `tools-landing-page-generator`
+
+Researches a tool-style keyword, verifies product claims from official evidence, studies the current organic landscape and public discussion, extracts the target site's visual language, and creates a responsive static landing-page package with retained research, copy, SEO, design, and validation artifacts. The page includes an honest non-functional tool placeholder for later product integration.
+
+调研工具型关键词并通过官网证据核实产品事实，分析当前自然搜索结果与公开讨论，提取目标网站的视觉语言，最终生成响应式静态落地页内容包，并保留调研、文案、SEO、设计与验证产物。页面中的工具区域是明确标注的非功能占位区，便于后续接入真实产品。
+
+**Use it for / 适用于**
+
+- Building a new SEO landing page for a generator, maker, checker, converter, calculator, analyzer, editor, or similar utility / 为 Generator、Maker、Checker、Converter、Calculator、Analyzer、Editor 等在线工具创建 SEO 落地页
+- Replacing or improving an existing tool page through the same evidence-first workflow / 用相同的证据优先流程替换或改进已有工具页
+- Producing an auditable package instead of only final-page copy / 生成可审计的完整内容包，而不只是最终页面文案
+
+**Inputs / 输入**
+
+- Required / 必填：one primary keyword and one official target website; provide the final page URL when it already exists / 一个主关键词与一个目标官网；已有最终页面 URL 时一并提供
+- Optional / 选填：product knowledge base, positioning, target users, use cases, differentiators, limitations, market, language, canonical URL, and brand guidance / 产品知识库、定位、目标用户、场景、差异点、限制、市场、语言、Canonical URL 与品牌规范
+
+```text
+Use $tools-landing-page-generator.
+
+Primary keyword: ai music video generator
+Website: https://example.org
+Final page URL: https://example.org/ai-music-video-generator
+```
+
+**Output / 输出**
+
+By default, the Skill creates a non-overwriting directory under `output/<keyword-slug>/` containing source and fact records, keyword and product research, final copy, SEO elements, design notes, asset records, responsive `index.html`, deterministic validation results, a QA report, and browser screenshots when rendering is available.
+
+默认在 `output/<keyword-slug>/` 下创建不覆盖历史结果的目录，包含来源与事实记录、关键词及产品调研、最终文案、SEO Elements、设计说明、素材记录、响应式 `index.html`、确定性校验结果、QA 报告，以及浏览器渲染可用时的页面截图。
+
+**Network and limits / 联网与限制**
+
+Current organic results, Reddit, Quora, the official site, and representative same-site pages are researched through available first-party browser and web-search capabilities. The workflow does not require paid research APIs, does not bypass access controls, does not invent product claims, and does not implement the real tool backend. It stops for confirmation when the keyword is unsuitable, evidence coverage is insufficient, or a canonical URL must be chosen.
+
+调研通过宿主提供的第一方浏览器与网页搜索能力访问当前自然搜索结果、Reddit、Quora、官网及代表性站内页面。流程不依赖付费调研 API，不绕过访问控制，不虚构产品事实，也不实现真实工具后端；关键词不适合、证据覆盖不足或需要确定 Canonical URL 时会暂停并请求确认。
 
 ## Credential and data safety / 凭证与数据安全
 

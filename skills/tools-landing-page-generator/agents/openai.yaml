@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tools Landing Page Generator"
+  short_description: "Research and build verified SEO tool landing pages"
+  default_prompt: "Use $tools-landing-page-generator to research a target keyword and build a verified, brand-matched static HTML landing page."
