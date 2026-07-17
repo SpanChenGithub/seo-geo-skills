@@ -297,6 +297,10 @@ Researches a tool-style keyword, verifies product claims from official evidence,
 
 调研工具型关键词并通过官网证据核实产品事实，分析当前自然搜索结果与公开讨论，提取目标网站的视觉语言，最终生成响应式静态落地页内容包，并保留调研、文案、SEO、设计与验证产物。页面中的工具区域是明确标注的非功能占位区，便于后续接入真实产品。
 
+See the [complete bilingual user guide](skills/tools-landing-page-generator/README.md) for installation, prompt templates, pause points, output structure, validation, and troubleshooting.
+
+安装、Prompt 模板、暂停节点、输出结构、验证方法与常见问题，请查看[完整双语用户指南](skills/tools-landing-page-generator/README.md)。
+
 **Use it for / 适用于**
 
 - Building a new SEO landing page for a generator, maker, checker, converter, calculator, analyzer, editor, or similar utility / 为 Generator、Maker、Checker、Converter、Calculator、Analyzer、Editor 等在线工具创建 SEO 落地页
@@ -312,8 +316,15 @@ Researches a tool-style keyword, verifies product claims from official evidence,
 Use $tools-landing-page-generator.
 
 Primary keyword: ai music video generator
-Website: https://example.org
+Official website: https://example.org
 Final page URL: https://example.org/ai-music-video-generator
+Market and language: United States / English
+
+Product context:
+- Real input and output: <...>
+- Actual workflow: <...>
+- Verified features and official sources: <...>
+- Primary CTA goal: <...>
 ```
 
 **Output / 输出**
